@@ -41,3 +41,6 @@ require('apostrophe')({
   }
 });
 ```
+
+> Please note that no apostrophe instance is used in this module as it should remain agnostic and only focus on format specific treatment.
+> See the [@apostrophecms/import-export README](https://github.com/apostrophecms/import-export#readme).
