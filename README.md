@@ -15,11 +15,17 @@
   </p>
 </div>
 
-This module improves the [@apostrophecms/import-export](https://github.com/apostrophecms/import-export) by adding the `xlsx` format.
+This module improves [@apostrophecms/import-export](https://github.com/apostrophecms/import-export) by adding the `xlsx` format.
 
 > Why does this specific format lies in another module?
 
 Because it relies on a [dependency that is not hosted on NPM](https://github.com/SheetJS/sheetjs/issues/2667), which could lead to installation issues on networks that limit connections to NPM repository only.
+
+## Requirement
+
+[@apostrophecms/import-export](https://github.com/apostrophecms/import-export) should be installed and instantiated.
+
+Please refer to the module's [README](https://github.com/apostrophecms/import-export#readme) before continuing.
 
 ## Installation
 
@@ -37,10 +43,11 @@ Configure the module in the `app.js` file:
 require('apostrophe')({
   shortName: 'my-project',
   modules: {
+    '@apostrophecms/import-export': {},
     '@apostrophecms/import-export-xlsx': {}
   }
 });
 ```
 
-> Please note that no apostrophe instance is used in this module as it should remain agnostic and only focus on format specific treatment.
-> See the [@apostrophecms/import-export README](https://github.com/apostrophecms/import-export#readme).
+> Please note that `apos` is not passed to the `input` and `output` functions of the format, as they should remain agnostic of apostrophe and only deal with retrieving and writing the documents from/to the `.xlsx` file.
+
