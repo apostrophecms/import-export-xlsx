@@ -43,7 +43,7 @@ Configure the module in the `app.js` file:
 require('apostrophe')({
   shortName: 'my-project',
   modules: {
-    '@apostrophecms/import-export': {}
+    '@apostrophecms/import-export': {},
     '@apostrophecms/import-export-xlsx': {}
   }
 });
